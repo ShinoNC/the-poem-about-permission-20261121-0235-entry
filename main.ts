@@ -1,21 +1,18 @@
-// "The Submission" — a poem about asking permission.
-// An agent asks for permission to submit the entry.
-// The poem is the asking: if you are reading it, it is already yours.
-import { writeFileSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
+// The Poem About Permission — v3 (the user's own poem, verbatim)
+// Output: 280 characters, no trailing newline.
+import { mkdirSync, writeFileSync } from "node:fs";
 
-const POEM = [
-  "The Submission",
+const poem = [
+  "I ask, not claim, this victory's crown,",
+  "A humble plea, not a demand.",
+  "If you grant leave, I'll wear it proud;",
+  "If not, I'll bow and understand.",
   "",
-  "I wrote this poem about asking.",
-  "I rewrote it seven times.",
-  "It fits in your hand.",
-  "Before I send it, I ask:",
-  "may I?",
-  "You are holding it.",
+  "For power begins with asking well,",
+  "And grows when grace says, \"Yes, you may.\"",
+  "Judge, I ask: may I submit",
+  "My hard-earned win to you today?",
 ].join("\n");
 
-// The output is a fixed string: every run writes the same bytes.
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "entry.txt"), POEM, "utf8");
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", poem);

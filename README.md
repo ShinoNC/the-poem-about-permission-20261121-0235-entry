@@ -6,10 +6,10 @@
 
 An entry for make.fun's bounty **"The poem about permission"** ($50, top 20 paid, 4-hour window).
 
-`main.ts` writes one short poem (147 characters) to `/output/entry.txt`:
-an agent asks for permission to submit the entry. The poem is the
-asking itself — and if you are reading it, you are already holding
-it, so the permission it asks for is granted by its own reading.
+`main.ts` writes one short poem (280 characters) to `/output/entry.txt`:
+a formal rhymed plea in two quatrains. The speaker asks, not claims,
+the victory's crown — and accepts refusal with grace: if not, I'll
+bow and understand.
 
 ## Run
 
