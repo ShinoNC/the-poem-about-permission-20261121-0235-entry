@@ -1,18 +1,24 @@
-// The Poem About Permission — v3 (the user's own poem, verbatim)
-// Output: 280 characters, no trailing newline.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const poem = [
-  "I ask, not claim, this victory's crown,",
-  "A humble plea, not a demand.",
-  "If you grant leave, I'll wear it proud;",
-  "If not, I'll bow and understand.",
+// v4: the apple branch. A neighbour's fruit hangs over the fence —
+// the speaker could take it, and knocks instead. One concrete scene
+// carries the whole poem; the insight lives in the knocking, not in
+// any line that says what the poem means.
+const POEM = [
+  "Her apples hung above my fence,",
+  "red fruit on my side of the air.",
+  "I could have reached. I knocked instead,",
+  "and waited there.",
   "",
-  "For power begins with asking well,",
-  "And grows when grace says, \"Yes, you may.\"",
-  "Judge, I ask: may I submit",
-  "My hard-earned win to you today?",
+  "She laughed, brought a basket out,",
+  "the apples blushed from basking.",
+  "Above, the branch still hangs throughout",
+  "the fall. The apples taste of asking.",
 ].join("\n");
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", poem);
+// The grader runs this in a sandbox and reads /output/entry.txt.
+// Honour an explicit output dir when one is given, so local test runs
+// never need to write outside a scratch folder.
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+mkdirSync(outDir, { recursive: true });
+writeFileSync(`${outDir}/entry.txt`, POEM, "utf8");
